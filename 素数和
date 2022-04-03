@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdbool.h> 
+int nums(int x)
+{
+	int i;
+	if(x ==1 ){
+		return 0;
+	}
+	for(i=2; i*i<=x; i++){
+		if(x%i == 0){
+	    	return 0;
+        }
+	}
+	return 1;
+}
+int main()
+{
+	int m,n;
+	int j;
+	scanf("%d %d", &m, &n);
+	int count = 0;
+	int sum = 0;
+	for(j=m; j<=n; j++)
+	{
+		if(nums(j) == 1)
+		{
+			count++;
+			sum += j;
+		}
+	}
+	printf("%d %d", count, sum);
+	
+	return 0;
+  }
