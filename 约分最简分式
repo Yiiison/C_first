@@ -1,0 +1,24 @@
+#include <stdio.h>
+ 
+int main()
+{
+	int i, j, n, k;
+	scanf("%d/%d", &i, &j);
+	loop:
+		if(i >= j)
+			n = j;
+		else
+			n = i;
+		for(k=2; k<=n; ++k)
+		{
+			if(j % k == 0 && i % k == 0)
+			{
+				j /= k;
+				i /= k;
+			    goto loop;
+			}
+		}
+	printf("%d/%d", i, j);
+	
+	return 0;
+}
