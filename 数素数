@@ -1,0 +1,41 @@
+#include <stdio.h>
+ 
+int a[10001];
+ 
+int main()
+{
+	int i, c = 0, j, p, m, n;
+	a[0] = 2;
+	for ( i=3; ;i+=2 )
+	{
+		p = 1;
+		for ( j=2; j*j<=i; j++ )
+		{
+			if ( i % j == 0 ) 
+			{
+				p = 0;
+				break;
+			}
+		}
+		if ( p )
+		{
+			a[++c] = i;
+		}
+		if ( c == 10000 ) break;
+	}
+	c = 0;
+	scanf("%d %d", &m, &n);
+	for ( i=m; i<=n; i++ )
+	{
+		c++;
+		printf("%d", a[i-1]);
+		if ( c % 10 == 0 )
+			printf("\n");
+		else if ( i < n )
+			printf(" ");
+	}
+	if ( c % 5 != 0 )
+		printf("\n");
+	
+	return 0;
+}
