@@ -1,0 +1,24 @@
+
+#include <stdio.h>
+#include <math.h>
+#define EPSILON 0.05 
+ 
+struct Vector {
+	double x;
+	double y;
+};
+ 
+int main(void)
+{
+	struct Vector v1, v2, v3;
+	scanf("%lf%lf%lf%lf", &v1.x, &v1.y, &v2.x, &v2.y);
+	v3.x = v1.x + v2.x;
+	v3.y = v1.y + v2.y;
+	if(fabs(v3.x) < EPSILON)
+		v3.x = fabs(v3.x);
+	if(fabs(v3.y) < EPSILON)
+		v3.y = fabs(v3.y);
+	printf("(%.1f, %.1f)\n", v3.x, v3.y);
+	return 0;
+
+}
